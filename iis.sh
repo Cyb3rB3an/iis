@@ -60,7 +60,7 @@ echo -e "----------------------------------------------------"
 echo -e "\e[39m"
 
 #DNS and NMAP 
-urllist=($(grep 'bindingInformation' $iisinput | cut -d ":" -f 3 | grep -v -e '^[[:space:]]*$'cat web01.txt | grep 'bindingInformation' | cut -d ":" -f 3 | cut -d '"' -f 1 | cut -d "=" -f 2 | grep -v -e '^[[:space:]]*$'))
+urllist=($(grep 'bindingInformation' $iisinput | cut -d ":" -f 3 | grep -v -e '^[[:space:]]*$'cat $iisinput | grep 'bindingInformation' | cut -d ":" -f 3 | cut -d '"' -f 1 | cut -d "=" -f 2 | grep -v -e '^[[:space:]]*$'))
 urltotal=${#urllist[@]}
 
 for ((i = 0; i != urltotal; i++)); do
